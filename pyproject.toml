@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pathspec-lite"
+version = "0.1.0"
+description = "Gitignore-style path pattern matching, small enough to read in one sitting."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { file = "LICENSE" }
+authors = [{ name = "Endos" }]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Topic :: Utilities",
+]
+dependencies = []
+
+[project.optional-dependencies]
+test = ["pytest>=7"]
+
+# Explicit, because this is a flat layout: auto-discovery sees `pathspec_lite/` and `tests/` as
+# two top-level packages and refuses rather than guessing.
+[tool.setuptools]
+packages = ["pathspec_lite"]
